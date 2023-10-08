@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Note Details</title>
+</head>
+<body>
+<h1>Note Details</h1>
+<dl>
+    <dt>ID:</dt>
+    <dd th:text="${note.id}"></dd>
+    <dt>Content:</dt>
+    <dd th:text="${note.text}"></dd>
+</dl>
+<a th:href="@{/api/notes}">Back to Note List</a>
+</body>
+</html>

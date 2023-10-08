@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Create Note</title>
+</head>
+<body>
+<h1>Create Note</h1>
+<form method="post" th:action="@{/api/notes/create}" th:object="${note}">
+    <label>
+        <textarea th:field="*{text}" placeholder="Content" required></textarea>
+    </label><br/>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

@@ -37,21 +37,25 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     public List<Note> createNotes(List<Note> notes) {
+        log.debug("Create list notes: {}", notes);
         return noteRepository.saveAll(notes);
     }
 
     @Override
     public List<Note> getNotes() {
+        log.debug("Get all notes");
         return noteRepository.findAll();
     }
 
     @Override
     public void deleteNote(Long id) {
+        log.debug("Delete note with id = {}", id);
         noteRepository.deleteById(id);
     }
 
     @Override
     public Note getNote(Long id) {
+        log.debug("Get note with id = {}", id);
         return noteRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Note with the specified ID was not found"));
     }
